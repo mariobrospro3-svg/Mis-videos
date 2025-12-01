@@ -25,9 +25,9 @@
       opacity: 0.9;
     }
 
-    #btn-sonido {
+    button {
       margin-top: 30px;
-      background-color: #ffbe00;
+      background-color: #00e5ff;
       color: #000;
       border: none;
       padding: 15px 28px;
@@ -35,12 +35,12 @@
       border-radius: 12px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0 0 10px rgba(255, 200, 0, 0.7);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
       transition: 0.2s;
     }
 
-    #btn-sonido:hover {
-      background-color: #ffd740;
+    button:hover {
+      background-color: #4ff3ff;
       transform: scale(1.05);
     }
   </style>
@@ -49,25 +49,9 @@
 <body>
 
   <h1>Mi Página de Videos</h1>
-  <p>Presiona el botón para activar la música 🎶</p>
+  <p>Haz clic en el botón para continuar</p>
 
-  <!-- Audio oculto -->
-  <audio id="bgmusic" loop preload="auto">
-    <source src="musicadefondo.mp4" type="audio/mp4">
-  </audio>
-
-  <button id="btn-sonido" onclick="activarSonido()">▶ Activar Música</button>
-
-  <script>
-    function activarSonido() {
-      const audio = document.getElementById("bgmusic");
-      audio.play().then(() => {
-        document.getElementById("btn-sonido").style.display = "none";
-      }).catch(err => {
-        alert("Toca la pantalla para activar el audio 📱🎶");
-      });
-    }
-  </script>
+  <button onclick="alert('¡Hola! 😊')">Presióname</button>
 
 </body>
 </html>
