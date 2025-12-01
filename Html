@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,25 +44,28 @@
       transform: scale(1.05);
     }
   </style>
+
 </head>
 <body>
 
   <h1>Mi Página de Videos</h1>
   <p>Presiona el botón para activar la música 🎶</p>
 
-  <!-- Música oculta -->
-  <video id="bgmusic" loop muted preload="auto" playsinline hidden>
-    <source src="musicadefondo.mp4" type="video/mp4">
-  </video>
+  <!-- Audio oculto -->
+  <audio id="bgmusic" loop preload="auto">
+    <source src="musicadefondo.mp4" type="audio/mp4">
+  </audio>
 
   <button id="btn-sonido" onclick="activarSonido()">▶ Activar Música</button>
 
   <script>
     function activarSonido() {
-      var v = document.getElementById("bgmusic");
-      v.muted = false;
-      v.play();
-      document.getElementById("btn-sonido").style.display = "none";
+      const audio = document.getElementById("bgmusic");
+      audio.play().then(() => {
+        document.getElementById("btn-sonido").style.display = "none";
+      }).catch(err => {
+        alert("Toca la pantalla para activar el audio 📱🎶");
+      });
     }
   </script>
 
