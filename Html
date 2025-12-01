@@ -7,48 +7,54 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #111;
+      background: linear-gradient(135deg, #0a0a0a, #1d1d1d);
       color: #fff;
       text-align: center;
-      padding-top: 60px;
-    }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      opacity: 0.8;
+      padding-top: 80px;
     }
 
-    /* Botón de activar sonido */
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
     #btn-sonido {
-      background-color: #00bcd4;
+      margin-top: 30px;
+      background-color: #ffbe00;
       color: #000;
       border: none;
-      padding: 12px 20px;
-      font-size: 18px;
-      border-radius: 10px;
+      padding: 15px 28px;
+      font-size: 20px;
+      border-radius: 12px;
       cursor: pointer;
-      margin-top: 20px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 200, 0, 0.7);
+      transition: 0.2s;
     }
+
     #btn-sonido:hover {
-      background-color: #00e5ff;
+      background-color: #ffd740;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
   <h1>Mi Página de Videos</h1>
-  <p>Disfruta la música de fondo 🎶</p>
+  <p>Presiona el botón para activar la música 🎶</p>
 
-  <!-- Video oculto para usar solo el sonido -->
-  <video id="bgmusic" autoplay loop muted preload="auto" playsinline style="display:none;">
+  <!-- Música oculta -->
+  <video id="bgmusic" loop muted preload="auto" playsinline style="display:none;">
     <source src="musicadefondo.mp4" type="video/mp4">
   </video>
 
-  <!-- Botón para activar sonido en móviles -->
-  <button id="btn-sonido" onclick="activarSonido()">Activar música 🔊</button>
+  <button id="btn-sonido" onclick="activarSonido()">▶ Activar Música</button>
 
   <script>
     function activarSonido() {
