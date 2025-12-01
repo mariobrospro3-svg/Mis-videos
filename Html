@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1d1d1d);
+      color: #fff;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    #btn-sonido {
+      margin-top: 30px;
+      background-color: #ffbe00;
+      color: #000;
+      border: none;
+      padding: 15px 28px;
+      font-size: 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 200, 0, 0.7);
+      transition: 0.2s;
+    }
+
+    #btn-sonido:hover {
+      background-color: #ffd740;
+      transform: scale(1.05);
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>Mi Página de Videos</h1>
+  <p>Presiona el botón para activar la música 🎶</p>
+
+  <!-- Audio oculto -->
+  <audio id="bgmusic" loop preload="auto">
+    <source src="musicadefondo.mp4" type="audio/mp4">
+  </audio>
+
+  <button id="btn-sonido" onclick="activarSonido()">▶ Activar Música</button>
+
+  <script>
+    function activarSonido() {
+      const audio = document.getElementById("bgmusic");
+      audio.play().then(() => {
+        document.getElementById("btn-sonido").style.display = "none";
+      }).catch(err => {
+        alert("Toca la pantalla para activar el audio 📱🎶");
+      });
+    }
+  </script>
+
+</body>
+</html>
