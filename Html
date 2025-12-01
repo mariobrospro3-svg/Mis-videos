@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding-top: 60px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      opacity: 0.8;
+    }
+
+    /* Botón de activar sonido */
+    #btn-sonido {
+      background-color: #00bcd4;
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #btn-sonido:hover {
+      background-color: #00e5ff;
+    }
+  </style>
 </head>
 <body>
+
   <h1>Mi Página de Videos</h1>
-  <p>Sitio en construcción...</p>
+  <p>Disfruta la música de fondo 🎶</p>
+
+  <!-- Video oculto para usar solo el sonido -->
+  <video id="bgmusic" autoplay loop muted preload="auto" playsinline style="display:none;">
+    <source src="musicadefondo.mp4" type="video/mp4">
+  </video>
+
+  <!-- Botón para activar sonido en móviles -->
+  <button id="btn-sonido" onclick="activarSonido()">Activar música 🔊</button>
+
+  <script>
+    function activarSonido() {
+      var v = document.getElementById("bgmusic");
+      v.muted = false;
+      v.play();
+      document.getElementById("btn-sonido").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
